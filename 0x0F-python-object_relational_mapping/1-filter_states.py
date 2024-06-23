@@ -9,7 +9,7 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3], charset="utf8")
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    rows = cur.fetchall()
+    rows = cursor.fetchall()
     for row in rows:
         if row[1][0] == 'N':
             print(row)
